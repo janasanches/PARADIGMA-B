@@ -3,13 +3,13 @@ import java.util.Scanner;
 public class JogoDaVelha{
 	public static void main(String args[]){
 		int tabuleiro[][] = {{-1,-1,-1},{-1,-1,-1},{-1,-1,-1}}; //array de alunos		
-		boolean ganhou = false, posOcupada = false;
+		boolean ganhou = false,  velha = false, posOcupada = false;
 		int posicao, qualJogador = 0;
 		Scanner entrada =  new Scanner(System.in);
 		
 		imprimeTabuleiro(tabuleiro);
 		
-		while(ganhou == false){
+		while((ganhou == false)&&(velha==false)){
 			System.out.printf("Escolha uma posicao jogador %d:\n", qualJogador);
 			posicao = entrada.nextInt();
 			
@@ -54,7 +54,7 @@ public class JogoDaVelha{
 			}else{
 				posOcupada = false;
 			}
-			ganhou = velha(tabuleiro);
+			velha = velha(tabuleiro);
 		}
 		
 		
